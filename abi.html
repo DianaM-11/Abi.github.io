@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz Primer Mes Amor 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+body {
+  margin: 0;
+  background: linear-gradient(to bottom, #9b59b6, #2c3e50);
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
+  flex-direction: column;
+  padding: 20px;
+}
+
+h1 {
+  position: absolute;
+  top: 30px;
+  font-size: 6vw;
+  font-family: 'Great Vibes', cursive;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #f39c12;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #9b59b6;
+  }
+}
+
+.message {
+  font-size: 4vw;
+  max-width: 90%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  position: absolute;
+}
+
+.message.show {
+  opacity: 1;
+}
+
+.hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.heart {
+  position: absolute;
+  font-size: 4vw;
+  color: #ff6b81;
+  animation: floatHearts 6s infinite ease-in-out;
+}
+
+@keyframes floatHearts {
+  0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+}
+
+.envelope {
+  display: none;
+  cursor: pointer;
+  position: relative;
+  margin-top: 50px;
+}
+
+.envelope::before {
+  content: "💌";
+  font-size: 20vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.envelope:hover {
+  transform: scale(1.1);
+}
+
+.letter {
+  display: none;
+  background: white;
+  color: black;
+  padding: 30px;
+  max-width: 90%;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.5);
+  font-size: 1em;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* MEDIA QUERIES: para ajustar en móviles/tablets */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 8vw;
+    top: 20px;
+  }
+
+  .message {
+    font-size: 5vw;
+  }
+
+  .envelope::before {
+    font-size: 25vw;
+  }
+
+  .letter {
+    font-size: 0.95em;
+    padding: 20px;
+  }
+
+  .heart {
+    font-size: 6vw;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Música de fondo -->
+  <audio id="background-music" autoplay loop>
+    <source src="Music/Amor a Distancia.mp3" type="audio/mp3">
+    Tu navegador no soporta la etiqueta de audio.
+  </audio>
+
+  <!-- Corazones -->
+  <div class="hearts">
+    <span class="heart" style="left:10%;">💖</span>
+    <span class="heart" style="left:25%; animation-delay: 1s;">💗</span>
+    <span class="heart" style="left:40%; animation-delay: 2s;">💘</span>
+    <span class="heart" style="left:60%; animation-delay: 3s;">💕</span>
+    <span class="heart" style="left:80%; animation-delay: 4s;">💞</span>
+  </div>
+
+  <h1>Feliz primer mes amor 💌</h1>
+
+  <!-- Frases -->
+  <div id="message" class="message"></div>
+
+  <!-- Sobre -->
+  <div class="envelope" id="envelope" onclick="mostrarCarta()"></div>
+
+  <!-- Carta -->
+  <div class="letter" id="letter">
+    <p>
+      Mi amor... ❤️<br><br>
+      Gracias por compartir este primer mes a mi lado, aunque la distancia sea grande, tu amor la hace pequeña.  
+      Cada palabra tuya, cada sonrisa que imagino, llena mi corazón de alegría.  
+      Estoy feliz de tenerte, de soñarte, y de saber que esto apenas comienza.  
+      <br><br>
+      ¡Te amo profundamente! 💖<br>
+      Feliz primer mes, mi vida.
+    </p>
+    <a >❤️ Te amo Amor</a>
+    <a >❤️ Feliz primer mes 💖 13-03-24 ~ 13-04-24 💖</a>
+  </div>
+
+  <script>
+   const frases = [
+  "A pesar de la distancia, estás siempre en mi corazón 💕",
+  "Cada mensaje, es un abrazo que me llega al alma, te amo más de lo que las palabras pueden decir 💖",
+  "Gracias por existir y elegirme cada día ✨",
+  "Juntas, incluso a kilómetros de distancia, esto es solo el comienzo de algo hermoso 💫",
+  "No importa la distancia, lo que importa es el amor que nos une 🌍💘",
+  "Tu sonrisa ilumina mi vida, sin importar la distancia 🌞💗",
+  "Eres la razón por la que cada kilómetro vale la pena 🚀💌",
+  "El amor no tiene fronteras, solo mil razones para ser más fuerte 💪❤️",
+  "Aunque estés lejos, siempre estarás cerca de mi corazón 💖🌍",
+  "Tu amor es el mapa que me guía en este viaje llamado vida, Juntas somos invencibles, no importa la distancia 🗺️💓✨",
+  "Mi corazón late por ti, no importa dónde estés ❤️💓",
+  "Aunque estemos a kilómetros, nuestras almas están siempre conectadas 💫💞",
+  "Te elijo hoy y siempre, una y otra vez, hasta el final de los tiempos 💖✨",
+  "Mi mayor deseo es verte feliz, y lucharé por hacerlo realidad todos los días, caminar de tu mano es el viaje más hermoso de mi vida 💘💫",
+  "Te elijo, te elegiré siempre, porque no hay otro lugar donde quiera estar que a tu lado 💞🌟",
+  "Mi felicidad comienza y termina contigo, porque en ti encontré mi hogar 🏠❤️",
+  "Quiero estar a tu lado en tus días buenos y malos, ser tu motivación, tu compañera y tu amiga 💖👫",
+  "Me veo contigo, logrando todos los sueños que compartimos, de la mano, construyendo nuestro futuro juntas ✨🌟",
+  "Me veo caminando de tu mano, llevando al parque a esa pequeña Abi que soñamos tener un día 👶💓",
+  "Quiero ser tu consuelo cuando el mundo te pese, tu apoyo cuando todo parezca difícil, y tu alegría cuando necesites una sonrisa 💕💪",
+  "Juntas siempre, en cada sueño que compartimos y en cada paso que damos hacia el futuro que hemos soñado 🌟💖"
+];
+
+    let index = 0;
+    const msg = document.getElementById("message");
+    const envelope = document.getElementById("envelope");
+
+    function mostrarFrase() {
+  msg.classList.remove("show");
+  setTimeout(() => {
+    msg.textContent = frases[index];
+    msg.classList.add("show");
+    index++;
+    if (index < frases.length) {
+      setTimeout(mostrarFrase, 5000); // Espera 5 segundos entre frases
+    } else {
+      // Esperar a que la última frase desaparezca antes de mostrar el sobre
+      setTimeout(() => {
+        msg.classList.remove("show");
+        envelope.style.display = "block";
+      }, 5000); // Esperar 1 segundo para que la última frase desaparezca
+    }
+  }, 1000); // Espera 1 segundo antes de mostrar la frase
+}
+
+
+    function mostrarCarta() {
+      envelope.style.display = "none";
+      document.getElementById("letter").style.display = "block";
+    }
+
+    mostrarFrase();
+  </script>
+</body>
+</html>
